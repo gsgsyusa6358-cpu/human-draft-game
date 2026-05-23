@@ -19,7 +19,20 @@ export type HumanCard = {
   strengths: string[];
   weaknesses: string[];
   bestRoles: string[];
+  emoji: string;
+  avatarUrl?: string;
   stats: HumanStats;
+};
+
+export type Mission = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  accent: string;
+  requiredStats: string[];
+  weights: HumanStats;
 };
 
 export type Combo = {
@@ -38,6 +51,26 @@ export type BadCombo = {
   penalty: number;
 };
 
+export type RoleKey = "leader" | "strategist" | "executor" | "moodMaker" | "wildcard";
+
+export type RoleAssignment = Record<RoleKey, string>;
+
+export type EventChoice = {
+  id: string;
+  text: string;
+  description: string;
+  scoreModifier: number;
+  statModifiers?: Partial<HumanStats>;
+};
+
+export type MissionEvent = {
+  id: string;
+  missionId: string;
+  title: string;
+  description: string;
+  choices: EventChoice[];
+};
+
 export type ResultType = {
   id: string;
   name: string;
@@ -45,14 +78,17 @@ export type ResultType = {
   comment: string;
 };
 
-export type DraftResult = {
+export type GameResult = {
+  mission: Mission;
   selectedCards: HumanCard[];
-  totalStats: HumanStats;
-  baseScore: number;
-  comboBonus: number;
-  badComboPenalty: number;
-  finalScore: number;
-  activatedCombos: Combo[];
-  activatedBadCombos: BadCombo[];
   resultType: ResultType;
+  teamName: string;
+  score: number;
+  totalStats: HumanStats;
+  goodCombos: Combo[];
+  badCombos: BadCombo[];
+  roleBonus: number;
+  eventChoice: EventChoice;
+  comment: string;
+  roleAssignment: RoleAssignment;
 };

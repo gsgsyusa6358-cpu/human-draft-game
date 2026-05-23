@@ -2,7 +2,7 @@ import type { ResultType } from "@/types/game";
 
 export const resultTypes: ResultType[] = [
   {
-    id: "fireworks",
+    id: "firework",
     name: "爆発力だけで突っ切る花火チーム",
     description: "一瞬の勢いは最強。ただし、継続力はかなり怪しい。短期決戦なら勝てるが、長期戦では燃え尽きる可能性がある。",
     comment: "このチームは、初速とノリで局面を変える力があります。ただし、勢い任せにすると後半でガス欠します。監督は、爆発した後に誰が片付けるのかまで設計してください。"
@@ -20,19 +20,19 @@ export const resultTypes: ResultType[] = [
     comment: "素材は悪くありません。むしろ強いです。ただし、自由に話させるだけでは崩れます。監督は、議題・役割・決定ルールを明確にしてください。"
   },
   {
-    id: "stray-dogs",
+    id: "wild-miracle",
     name: "カオスから奇跡を生む野良犬チーム",
     description: "秩序はない。でも、予想外の突破力がある。普通の会社では扱いにくいが、企画・創作・短期勝負では謎に強い。",
     comment: "このチームを管理しようとしすぎると死にます。必要なのは細かい管理ではなく、最低限の柵と明確なゴールです。暴走を止めるより、暴走する方向を決めてください。"
   },
   {
-    id: "too-kind",
+    id: "kind-undecided",
     name: "全員やさしいけど誰も決めないチーム",
     description: "空気は良い。人間関係も悪くない。でも、最後の決断ができない。優しさが停滞に変わる危険がある。",
     comment: "このチームに必要なのは、さらに優しい人ではありません。最後に決める人です。やさしさを活かすには、誰かが責任を持って旗を立てる必要があります。"
   },
   {
-    id: "genius-dependent",
+    id: "one-genius",
     name: "一人の天才に依存する危険チーム",
     description: "ひらめきの破壊力はある。でも、その人が止まると全部止まる。属人化の匂いがかなり強い。",
     comment: "このチームは、天才を中心に回すと短期的には勝てます。ただし、長く続けるなら天才の思考を仕組みに変える必要があります。才能を神棚に置かず、構造に落としてください。"
@@ -44,7 +44,3 @@ export const resultTypes: ResultType[] = [
     comment: "このチームは、今の時点では完成されていません。ただし、それは弱いという意味ではありません。監督の仕事は、欠点を責めることではなく、才能が出る置き場所を見つけることです。"
   }
 ];
-
-export const getResultType = (id: string): ResultType => {
-  return resultTypes.find((result) => result.id === id) ?? resultTypes[resultTypes.length - 1];
-};

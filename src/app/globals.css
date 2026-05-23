@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  background: #f7f8fb;
+  background: #f8fafc;
 }
 
 * {
@@ -18,8 +18,11 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 42%, #eef2f7 100%);
-  color: #151827;
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.2), transparent 32rem),
+    radial-gradient(circle at top right, rgba(168, 85, 247, 0.18), transparent 28rem),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 44%, #eef2ff 100%);
+  color: #111827;
   font-family: Arial, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
 }
 
@@ -28,4 +31,57 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.92);
+  }
+
+  70% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease both;
+}
+
+.animate-pop {
+  animation: pop 0.28s ease both;
+}
+
+.confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti span {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0.75;
 }

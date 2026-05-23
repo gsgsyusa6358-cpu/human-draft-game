@@ -4,6 +4,7 @@ export const humans: HumanCard[] = [
   {
     id: "big-mouth-ace",
     name: "口だけエース",
+    emoji: "🗣️",
     nickname: "発言だけメジャーリーガー",
     description: "会議では誰よりも壮大なビジョンを語る。ただし、実行フェーズになると急にベンチ裏へ消える。",
     strengths: ["場を盛り上げる", "ビジョンを語れる", "プレゼンが強い"],
@@ -14,6 +15,7 @@ export const humans: HumanCard[] = [
   {
     id: "silent-operator",
     name: "静かな実務神",
+    emoji: "🛠️",
     nickname: "何も言わずに全部終わらせる守備職人",
     description: "会議では空気。でも気づいたら資料も段取りも全部終わっている。声は小さいが、仕事の信頼度は異常。",
     strengths: ["正確性", "安定感", "継続力"],
@@ -24,6 +26,7 @@ export const humans: HumanCard[] = [
   {
     id: "meeting-crasher",
     name: "会議クラッシャー",
+    emoji: "💥",
     nickname: "それ意味あります？砲の使い手",
     description: "空気を読まずに本質を突く。停滞した会議を壊せるが、言い方次第で全員のメンタルも壊す。",
     strengths: ["本質を突く", "無駄を壊す", "停滞を突破する"],
@@ -34,6 +37,7 @@ export const humans: HumanCard[] = [
   {
     id: "over-reader",
     name: "空気読みすぎ職人",
+    emoji: "🫧",
     nickname: "全員の顔色を読む人間レーダー",
     description: "その場の空気を読みすぎて、自分の意見がログアウトする。揉め事の察知能力はプロ級。",
     strengths: ["調整力", "共感力", "揉め事察知"],
@@ -44,6 +48,7 @@ export const humans: HumanCard[] = [
   {
     id: "midnight-genius",
     name: "深夜だけ天才",
+    emoji: "🌙",
     nickname: "午前2時の神アイデア製造機",
     description: "昼はゾンビ。夜中になると急に世界の真理に近づく。生活リズムと引き換えに発想力を得た人間。",
     strengths: ["独創性", "発想力", "世界観づくり"],
@@ -54,6 +59,7 @@ export const humans: HumanCard[] = [
   {
     id: "morning-dead",
     name: "朝完全停止型",
+    emoji: "💤",
     nickname: "午前中だけ未起動アプリ",
     description: "朝は人間の形をした読み込み中画面。午後から少しずつ起動し、夕方にようやく本来の力を出す。",
     strengths: ["午後から粘る", "一度入ると集中する", "地味に継続できる"],
@@ -64,6 +70,7 @@ export const humans: HumanCard[] = [
   {
     id: "approval-monster",
     name: "承認欲求モンスター",
+    emoji: "🌟",
     nickname: "褒めると3倍働く目立ちたがり屋",
     description: "褒められると覚醒する。無視されると闇落ちする。使い方を間違えるとチームの温度を乱す。",
     strengths: ["目立つ仕事に強い", "火がつくと爆発する", "発信力がある"],
@@ -74,6 +81,7 @@ export const humans: HumanCard[] = [
   {
     id: "meaning-researcher",
     name: "意味が見えないと動かない研究員",
+    emoji: "🔍",
     nickname: "納得するまで1ミリも動かない深掘り職人",
     description: "意味が見えない作業には身体が拒否反応を起こす。だが、一度意味がつながると異常な深さまで掘る。",
     strengths: ["構造化", "本質理解", "言語化"],
@@ -84,6 +92,7 @@ export const humans: HumanCard[] = [
   {
     id: "sunny-person",
     name: "場を温める太陽人間",
+    emoji: "☀️",
     nickname: "いるだけで空気が柔らかくなる人",
     description: "この人がいると、なぜか会議の空気が少しマシになる。能力値には出にくいが、チームの温度を保つ重要人物。",
     strengths: ["安心感", "関係構築", "場づくり"],
@@ -94,6 +103,7 @@ export const humans: HumanCard[] = [
   {
     id: "deadline-commander",
     name: "締切前だけ覚醒する特攻隊長",
+    emoji: "🔥",
     nickname: "普段サボって最後に全部持っていく火事場人間",
     description: "通常時はゆるい。締切前日になると急にスーパーサイヤ人化する。計画性はないが、爆発力は本物。",
     strengths: ["火事場の馬鹿力", "突破力", "ラストスパート"],
