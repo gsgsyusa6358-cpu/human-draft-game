@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f7f8fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 42%, #eef2f7 100%);
+  color: #151827;
+  font-family: Arial, "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
