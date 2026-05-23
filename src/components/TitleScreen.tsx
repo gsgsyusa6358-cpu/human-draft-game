@@ -1,3 +1,5 @@
+import { MediaPanel } from "./MediaPanel";
+
 type Props = {
   onStart: () => void;
 };
@@ -6,6 +8,15 @@ export function TitleScreen({ onStart }: Props) {
   return (
     <section className="mx-auto flex min-h-screen w-full max-w-3xl flex-col justify-center px-5 py-14">
       <div className="animate-fade-up rounded-[2rem] border border-white bg-white/85 p-6 shadow-card backdrop-blur">
+        <MediaPanel
+          webmPath="/media/title-draft.webm"
+          mp4Path="/media/title-draft.mp4"
+          gifPath="/media/title-draft.gif"
+          title="DRAFT OPENING"
+          fallbackIcon="🎴"
+          fallbackLabel="HUMAN DRAFT"
+          className="mb-6 aspect-[16/9] max-h-64"
+        />
         <div className="mb-6 inline-flex rounded-full bg-slate-900 px-4 py-2 text-sm font-black text-white">監督就任のお知らせ</div>
         <h1 className="text-5xl font-black leading-tight tracking-normal text-slate-950 sm:text-6xl">人間ドラフト会議</h1>
         <p className="mt-3 text-xl font-black text-blue-700">クセ強メンバーで最強チームを作れ</p>

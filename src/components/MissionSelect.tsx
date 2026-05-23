@@ -1,5 +1,6 @@
 import { missions } from "@/data/missions";
 import type { Mission } from "@/types/game";
+import { MediaPanel } from "./MediaPanel";
 import { StepIndicator } from "./StepIndicator";
 
 type Props = {
@@ -17,9 +18,15 @@ export function MissionSelect({ onSelect }: Props) {
       <div className="grid gap-4 md:grid-cols-2">
         {missions.map((mission) => (
           <article key={mission.id} className="rounded-3xl border border-white bg-white/90 p-5 shadow-card">
-            <div className={`mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br ${mission.accent} text-3xl shadow-card`}>
-              {mission.icon}
-            </div>
+            <MediaPanel
+              webmPath={mission.media?.webmPath}
+              mp4Path={mission.media?.mp4Path}
+              gifPath={mission.media?.gifPath}
+              title="MISSION MOVIE"
+              fallbackIcon={mission.icon}
+              fallbackLabel={mission.title}
+              className="mb-4 aspect-[16/9] max-h-44"
+            />
             <h3 className="text-xl font-black text-slate-950">{mission.title}</h3>
             <p className="mt-1 font-bold text-blue-700">{mission.subtitle}</p>
             <p className="mt-3 text-sm leading-7 text-slate-600">{mission.description}</p>

@@ -1,5 +1,6 @@
 import { events } from "@/data/events";
 import type { EventChoice, Mission } from "@/types/game";
+import { MediaPanel } from "./MediaPanel";
 import { StepIndicator } from "./StepIndicator";
 
 type Props = {
@@ -9,14 +10,19 @@ type Props = {
 
 export function EventPhase({ mission, onChoose }: Props) {
   const event = events.find((item) => item.missionId === mission.id) ?? events[0];
+  const eventMediaPath = getEventMediaPath(mission.id);
 
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-8">
       <StepIndicator current={4} />
       <div className="rounded-3xl border border-white bg-white p-5 shadow-card">
-        <div className={`mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br ${mission.accent} text-4xl shadow-card`}>
-          {mission.icon}
-        </div>
+        <MediaPanel
+          webmPath={eventMediaPath}
+          title="EVENT CUT"
+          fallbackIcon={mission.icon}
+          fallbackLabel={event.title}
+          className="mb-5 aspect-[16/9] max-h-56"
+        />
         <p className="text-xs font-black text-blue-700">EVENT PHASE</p>
         <h2 className="mt-2 text-3xl font-black text-slate-950">{event.title}</h2>
         <p className="mt-4 text-base font-bold leading-8 text-slate-700">{event.description}</p>
@@ -42,4 +48,10 @@ export function EventPhase({ mission, onChoose }: Props) {
       </div>
     </section>
   );
+}
+
+function getEventMediaPath(missionId: string) {
+  if (missionId === "viral-plan") return "/media/event-midnight.webm";
+  if (missionId === "company-chaos" || missionId === "department-rescue") return "/media/event-chaos.webm";
+  return "/media/event-crisis.webm";
 }

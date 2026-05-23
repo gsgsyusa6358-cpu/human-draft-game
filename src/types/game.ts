@@ -11,6 +11,12 @@ export type StatKey =
 
 export type HumanStats = Record<StatKey, number>;
 
+export type MediaAsset = {
+  webmPath?: string;
+  mp4Path?: string;
+  gifPath?: string;
+};
+
 export type HumanCard = {
   id: string;
   name: string;
@@ -31,6 +37,7 @@ export type Mission = {
   description: string;
   icon: string;
   accent: string;
+  media?: MediaAsset;
   requiredStats: string[];
   weights: HumanStats;
 };
@@ -78,10 +85,26 @@ export type ResultType = {
   comment: string;
 };
 
+export type MissionOutcomeStatus = "GREAT CLEAR" | "CLEAR" | "FAILED" | "BAD END";
+
+export type MissionOutcome = {
+  status: MissionOutcomeStatus;
+  rank: "S" | "A" | "B" | "C" | "D";
+  label: string;
+  comment: string;
+};
+
+export type MissionParameter = {
+  label: string;
+  value: number;
+};
+
 export type GameResult = {
   mission: Mission;
   selectedCards: HumanCard[];
   resultType: ResultType;
+  missionOutcome: MissionOutcome;
+  missionParameters: MissionParameter[];
   teamName: string;
   score: number;
   totalStats: HumanStats;
@@ -90,5 +113,6 @@ export type GameResult = {
   roleBonus: number;
   eventChoice: EventChoice;
   comment: string;
+  directorComment: string;
   roleAssignment: RoleAssignment;
 };
